@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+/* === Estilos generales === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* === Contenedor del formulario === */
+.form-container {
+    background-color: #fff;
+    padding: 40px 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    width: 350px;
+}
+
+/* === Título === */
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* === Etiquetas === */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* === Campos de entrada === */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.3);
+    outline: none;
+}
+
+/* === Botón de envío === */
+input[type="submit"] {
+    width: 100%;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #375ac2;
+}
+
+/* === Enlace de login === */
+a {
+    color: #1cc88a;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Adaptación móvil === */
+@media (max-width: 400px) {
+    .form-container {
+        width: 90%;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registro</h2>
+        <form action="registro.php" method="POST">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="clave">Clave</label>
+            <input type="password" id="clave" name="clave" required>
+
+            <input type="submit" value="Registrarse">
+            <center><a href="index.html">Iniciar sesión</a></center>
+        </form>
+    </div>
+
+</body>
+</html>

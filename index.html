@@ -1,0 +1,117 @@
+<html>
+<head>
+<style>
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        color: #333;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    #banner {
+        font-size: 22px;
+        font-weight: bold;
+        color: #023e8a;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #0077b6;
+        padding-bottom: 10px;
+    }
+
+    td {
+        padding: 8px;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 180px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transition: border 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-color: #0077b6;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        background-color: #0077b6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0096c7;
+    }
+
+    a {
+        color: #023e8a;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 15px;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #03045e;
+    }
+
+    center {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+    
+</head>
+<body>
+    <center> <table id="banner">
+<tr>
+    <td>Web email del departamento</td>
+</tr>
+    </table>
+
+    
+    <form action="login.php" method="post">
+    <table>
+<tr>
+    <td>Usuario</td>
+    <td><input type="text" name="usu"></td>
+    </tr>
+
+    <tr>
+    <td>Clave</td>
+    <td><input type="password" name="cla"></td>
+    </tr>
+
+    <tr>
+    <td><input type="submit" value="Enviar"></td>
+    </tr>
+
+    </table>
+    o <a href="registro.html">Registrarse</a>
+</form>
+</center>
+</body>
+
+
+
+</html>
