@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_POST['usu'])) {
+    header("Location: index.html");
+    exit();}
+
 $host = "localhost";
 $usuario = "root";
 $contrasena = "";
@@ -23,9 +28,12 @@ if ($l == 1) {
     $fila = $resultado->fetch_array();
 
     if ($fila['clave'] == $codificada) { 
-        header(header: "Location: prueba.html");
+        $_SESSION['usu'] = $u;
+        header(header: "Location: listado.php");
+        
     } else {
         echo "<center><h1>La clave es incorrecta</h1></center>";
+        session_destroy();
     }
 } else {
     echo "<center><h1>El usuario no existe</h1></center>";

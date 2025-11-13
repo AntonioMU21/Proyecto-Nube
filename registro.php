@@ -1,4 +1,8 @@
 <?php
+if (!isset($_POST['usuario'])) {
+    header("Location: registro.html");
+    exit();
+}
 $u=$_POST['usuario'];
 $n=$_POST['nombre'];
 $c=$_POST['clave'];
@@ -22,6 +26,6 @@ if (!$conexion) {
 $sql = "insert into usuario values('$u','$$codificada','$n')";
 $resultado = $conexion->query($sql);
 $l=mysqli_affected_rows($conexion);
-if ($l==1) header("Location: prueba.html");
+if ($l==1) header("Location: index.html");
 else echo "<center><h1>No se ha podido insertar el registro</h1></center>";
 ?>
