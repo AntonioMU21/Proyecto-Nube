@@ -24,8 +24,10 @@ if (!$conexion) {
 
 // Si todo va bien
 $sql = "insert into usuario values('$u','$$codificada','$n')";
+try{
 $resultado = $conexion->query($sql);
-$l=mysqli_affected_rows($conexion);
-if ($l==1) header("Location: index.html");
-else echo "<center><h1>No se ha podido insertar el registro</h1></center>";
-?>
+ header("Location: index.html");
+}
+catch(mysqli_sql_exception $error){
+   header("Location: UsuarioExiste.html");
+}

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 if (!isset($_POST['para'])) {
     header("Location: listado.php");
     exit();
@@ -9,7 +10,7 @@ $clave= "";
 $db="email";
 $conexion=mysqli_connect($host,$usuario,$clave,$db);
 if (!$conexion) {die("Error");}
-$de=$_POST['de'];
+$de = $_SESSION['usu'];
 $para=$_POST['para'];
 $fecha=$_POST['fecha'];
 $asunto=$_POST['asunto'];

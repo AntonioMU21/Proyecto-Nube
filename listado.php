@@ -142,23 +142,7 @@ button:hover {
 <body>
 <center><table id="banner"><tr><td>WEB MAIL DEL DEPARTAMENTO</td></tr></table>
 <br><br>
-<form method="post" action="insertar.php">
-  <label for="de">De</label>
-  <input type="text" id="de" name="de" required>
-  <label for="para">Para</label>
-  <input type="text" id="para" name="para" required><br><br>
-  <label for="asunto">Asunto</label>
-  <input type="text" id="asunto" name="asunto" required><br><br>
 
-  <label for="cuerpo">Cuerpo del mensaje</label>
-  <input type="text" id="cuerpo" name="cuerpo" required><br><br>
-  <label for="fecha">Fecha</label>
-  <input type="date" id="fecha" name="fecha">
-
-  <input type="submit" value="Enviar">
-  
-  
-  </form>
 <?php
 $u=$_SESSION['usu'];
 
@@ -179,6 +163,7 @@ $sql = "select * from mensajes where para='$u'";
 $resultado = $conexion->query($sql);
 
 $l=mysqli_affected_rows($conexion);
+echo "<h2>Bienvenido $u</h2>";
 echo "<table width='60%'>";
 echo "<tr><th>De</th><th>Asunto</th><th>Fecha</th><th>Leer</th><th>Borrar</tr>";
 while ($fila = $resultado->fetch_array()) {
@@ -190,13 +175,26 @@ while ($fila = $resultado->fetch_array()) {
         echo "<td><a href='borrar.php?ID=$fila[5]'><img src='borrar.png' width='25'></a></td>";
         echo "</tr>";
     }
-    echo "<table>";
-
-
-
-
-
+    echo "</table>";
 ?>
+
+<form method="post" action="insertar.php">
+    <h3>Mandar un correo</h3>
+  <label for="para">Para</label>
+  <input type="text" id="para" name="para" required><br><br>
+  <label for="asunto">Asunto</label>
+  <input type="text" id="asunto" name="asunto" required><br><br>
+
+  <label for="cuerpo">Cuerpo del mensaje</label>
+  <input type="text" id="cuerpo" name="cuerpo" required><br><br>
+  <label for="fecha">Fecha</label>
+  <input type="date" id="fecha" name="fecha">
+
+  <input type="submit" value="Enviar">
+  
+  
+  </form>
+  
 <a href="salir.php"><button>Cerrar sesión</button> </a>
 </body>
 </html>
